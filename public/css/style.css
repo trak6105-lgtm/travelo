@@ -1,0 +1,915 @@
+/* ==========================================================================
+   TRAVELO VIET NAM - CORE STYLESHEET
+   Clean, modern, highly secure, instant load (< 50ms)
+   ========================================================================== */
+
+:root {
+  --primary-navy: #030836;
+  --primary-hover: #07125e;
+  --navy-text: #050c42;
+  --secondary-text: #596b82;
+  --light-gray-bg: #f5f7fb;
+  --card-border: #e2e8f0;
+  --card-hover-border: #cbd5e1;
+  --white: #ffffff;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --shadow-float: 0 20px 45px -10px rgba(3, 8, 54, 0.12), 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--navy-text);
+  background-color: var(--white);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.site-header {
+  background-color: var(--primary-navy);
+  color: var(--white);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 50;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.brand-title {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.brand-sub {
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 2.2px;
+  opacity: 0.9;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-icon-btn {
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.header-icon-btn:hover {
+  opacity: 1;
+}
+
+.header-icon-btn svg {
+  width: 19px;
+  height: 19px;
+}
+
+.dropdown-select-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  margin-left: 6px;
+}
+
+.select-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  padding: 4px;
+  user-select: none;
+}
+
+.select-item:hover {
+  opacity: 0.85;
+}
+
+.chevron-down {
+  width: 13px;
+  height: 13px;
+}
+
+.header-separator {
+  opacity: 0.4;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   HERO BANNER & FLOATING FORM (Pure iVisa Clean Style with Brand Swoop)
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  min-height: 590px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 60%, #ffffff 100%);
+  padding-bottom: 70px; /* Tạo khoảng trống thoáng đãng dưới chân 2 du khách y như iVisa */
+}
+
+/* Họa tiết ánh sáng mềm phía sau tạo chiều sâu */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: -15%;
+  right: 8%;
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(1, 160, 172, 0.1) 0%, rgba(3, 8, 54, 0.02) 50%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Dải lụa sóng Brand Swoop Ribbon chạy ngang màn hình */
+.hero-swoosh {
+  position: absolute;
+  top: 34%;
+  left: 0;
+  width: 100%;
+  min-width: 1200px;
+  height: auto;
+  opacity: 0.85;
+  pointer-events: none;
+  user-select: none;
+  z-index: 2;
+  transform: translateY(-15px);
+}
+
+.hero-container-flex {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 46px; /* Cách form ra một khoảng vừa vặn, chuẩn mực giống hệt iVisa */
+  width: 100%;
+  max-width: 1220px;
+  padding-top: 36px;
+}
+
+/* Khối bên trái: Tiêu đề & Form nổi */
+.hero-form-col {
+  flex: 1.15;
+  max-width: 570px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  z-index: 10;
+}
+
+/* Tiêu đề lớn kiểu iVisa */
+.hero-intro-text {
+  margin-bottom: 22px;
+}
+
+.hero-big-title {
+  font-size: clamp(2.2rem, 3.6vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  color: var(--navy-text);
+  margin-bottom: 12px;
+}
+
+.hero-title-highlight {
+  background: linear-gradient(135deg, #01A0AC 0%, #0d9488 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-weight: 800;
+  position: relative;
+}
+
+.hero-big-subtext {
+  font-size: 15px;
+  color: var(--secondary-text);
+  line-height: 1.6;
+  max-width: 52ch;
+  font-weight: 500;
+}
+
+.hero-subtext-link {
+  color: var(--navy-text);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: #01A0AC;
+  text-underline-offset: 3px;
+}
+
+/* Cột hình 2 người du khách iVisa */
+.hero-couple-col {
+  flex: 0.95;
+  max-width: 480px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  z-index: 5;
+  margin-left: 0; /* Không đè lên vali, cách một khoảng tự nhiên như iVisa */
+}
+
+.travelers-image-wrapper {
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.couple-travelers-img {
+  width: 100%;
+  height: auto;
+  max-height: 530px;
+  object-fit: contain;
+  object-position: bottom;
+  display: block;
+  filter: drop-shadow(0 22px 35px rgba(3, 8, 54, 0.16));
+  transition: transform 0.3s ease;
+}
+
+.couple-travelers-img:hover {
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   FLOATING TRUST PILLS (iVisa Signature Badge Elements)
+   ========================================================================== */
+.floating-trust-pill {
+  background: #ffffff;
+  border-radius: 9999px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 12px 28px -6px rgba(3, 8, 54, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy-text);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.pill-svg-icon {
+  width: 16px;
+  height: 16px;
+  color: #01A0AC;
+}
+
+.pill-check {
+  color: #10b981;
+}
+
+.pill-star-icon {
+  color: #f59e0b;
+  font-size: 14px;
+}
+
+/* Vị trí Pill 1: Trên đầu du khách */
+.pill-top-right {
+  position: absolute;
+  top: 6%;
+  right: 15px;
+  z-index: 25;
+  animation: floatPill 4s ease-in-out infinite;
+}
+
+/* Vị trí Pill 2: Nổi trên góc phải của form (Giao thoa giữa form và người) */
+.pill-middle-left {
+  position: absolute;
+  top: -18px;
+  right: 32px;
+  z-index: 30;
+  box-shadow: 0 10px 25px -4px rgba(1, 160, 172, 0.2), 0 2px 6px rgba(0,0,0,0.03);
+}
+
+/* Vị trí Pill 3: Cạnh vali vàng */
+.pill-bottom-right {
+  position: absolute;
+  bottom: 85px;
+  right: -25px;
+  z-index: 25;
+  animation: floatPill 4.5s ease-in-out infinite 1s;
+}
+
+@keyframes floatPill {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* ==========================================================================
+   FORM NỔI CAO CẤP (Floating Luxury Search Card)
+   ========================================================================== */
+.floating-search-card {
+  position: relative;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 28px 60px -15px rgba(3, 8, 54, 0.13), 0 8px 24px -4px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  padding: 32px 36px;
+  width: 100%;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.specialist-tag {
+  font-size: 13px;
+  font-weight: 600;
+  color: #7b8ea4;
+  margin-bottom: 6px;
+}
+
+.hero-main-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--navy-text);
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.hero-subtext {
+  font-size: 14px;
+  color: var(--secondary-text);
+  line-height: 1.55;
+  margin-bottom: 24px;
+}
+
+/* Search Box kiểu iVisa cao cấp */
+.travel-search-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px 20px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-input-box:focus-within {
+  border-color: #01A0AC;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(1, 160, 172, 0.12);
+}
+
+.search-field-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.search-field-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: #64748b;
+}
+
+.search-field-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-pin-icon {
+  width: 18px;
+  height: 18px;
+  color: #01A0AC;
+  flex-shrink: 0;
+}
+
+.search-field-input-row input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy-text);
+}
+
+.search-field-input-row input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+/* Nút Search Tour */
+.btn-search-tour {
+  background: linear-gradient(135deg, #030836 0%, #081362 100%);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 13.5px;
+  letter-spacing: 0.8px;
+  padding: 14px 24px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.2s ease;
+  box-shadow: 0 6px 18px rgba(3, 8, 54, 0.2);
+}
+
+.btn-search-tour:hover {
+  background: linear-gradient(135deg, #07125e 0%, #01A0AC 100%);
+  box-shadow: 0 8px 24px rgba(1, 160, 172, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-search-tour:active {
+  transform: scale(0.99);
+}
+
+.btn-search-icon {
+  width: 17px;
+  height: 17px;
+}
+
+/* Live search dropdown results */
+.search-live-results {
+  margin-top: 10px;
+  max-height: 220px;
+  overflow-y: auto;
+  border-radius: 8px;
+  background: #f8fafc;
+  display: none;
+}
+
+.search-live-results.active {
+  display: block;
+  border: 1px solid #e2e8f0;
+}
+
+.result-item {
+  padding: 10px 14px;
+  border-bottom: 1px solid #edf2f7;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result-item:last-child {
+  border-bottom: none;
+}
+
+.result-item:hover {
+  background-color: #edf2f7;
+}
+
+.result-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--navy-text);
+}
+
+.result-badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: #e2e8f0;
+  color: #475569;
+}
+
+/* Trust features */
+.trust-features-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+  font-size: 13.5px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.trust-features-bar .dot {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+/* 3 Badges under form */
+.license-tags-container {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+  width: 100%;
+  max-width: 530px;
+  justify-content: flex-end;
+}
+
+.license-tag {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  color: #6b7c93;
+  font-size: 11.5px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  user-select: none;
+}
+
+/* ==========================================================================
+   EXPLORE TRAVELO SECTION
+   ========================================================================== */
+.explore-section {
+  padding: 56px 0 68px;
+  background-color: var(--white);
+}
+
+.section-heading {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--navy-text);
+  margin-bottom: 28px;
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.explore-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 28px;
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.explore-card:hover {
+  border-color: var(--card-hover-border);
+  box-shadow: 0 6px 20px rgba(5, 12, 66, 0.04);
+  transform: translateY(-1px);
+}
+
+.card-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--navy-text);
+  margin-bottom: 4px;
+}
+
+.card-desc {
+  font-size: 13.5px;
+  color: var(--secondary-text);
+}
+
+.card-arrow {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy-text);
+  transition: transform 0.2s ease;
+}
+
+.card-arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+.explore-card:hover .card-arrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.site-footer {
+  background-color: var(--light-gray-bg);
+  padding: 50px 0 36px;
+  border-top: 1px solid #eaedf3;
+}
+
+.footer-main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 40px;
+  gap: 30px;
+}
+
+/* Cột logo footer */
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-logo-block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-logo-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.footer-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.footer-title {
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: var(--navy-text);
+}
+
+.footer-sub {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--navy-text);
+}
+
+.footer-slogan {
+  font-size: 13px;
+  color: var(--secondary-text);
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+/* Cột điều hướng footer */
+.footer-links-grid {
+  display: flex;
+  gap: 50px;
+}
+
+.links-subcol {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-nav-link {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy-text);
+  transition: color 0.2s;
+}
+
+.footer-nav-link:hover {
+  color: #1e3a8a;
+}
+
+/* Cột logo thanh toán */
+.footer-payments-col {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.payment-badges-img {
+  max-width: 220px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Footer bottom */
+.footer-bottom-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 24px;
+  gap: 20px;
+}
+
+.footer-copyright {
+  font-size: 13px;
+  color: #556987;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-box {
+  width: 28px;
+  height: 28px;
+  background-color: var(--primary-navy);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: opacity 0.2s;
+}
+
+.social-box:hover {
+  opacity: 0.85;
+}
+
+.social-box svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* ==========================================================================
+   ANIMATION & RESPONSIVE
+   ========================================================================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-section {
+    min-height: auto;
+    padding-top: 24px;
+    padding-bottom: 0;
+  }
+
+  .hero-swoosh {
+    display: none; /* Ẩn dải sóng trên tablet/mobile như chuẩn iVisa */
+  }
+  
+  .hero-container-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding-top: 10px;
+  }
+
+  .hero-couple-col {
+    max-width: 340px;
+    margin-left: 0;
+    order: 2;
+    position: relative;
+    padding-bottom: 20px;
+  }
+
+  .couple-travelers-img {
+    max-height: 360px;
+  }
+
+  .pill-middle-left {
+    top: -14px;
+    right: 16px;
+  }
+
+  .pill-bottom-right {
+    right: 0;
+    bottom: 40px;
+  }
+
+  .pill-top-right {
+    top: 0;
+    right: 0;
+  }
+  
+  .hero-form-col {
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
+    margin-bottom: 0;
+    order: 1;
+  }
+  
+  .floating-search-card {
+    max-width: 100%;
+    padding: 28px 24px;
+  }
+  
+  .license-tags-container {
+    max-width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer-main-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .footer-payments-col {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .explore-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  
+  .hero-main-title {
+    font-size: 24px;
+  }
+  
+  .footer-links-grid {
+    gap: 30px;
+  }
+  
+  .footer-bottom-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .trust-features-bar {
+    flex-wrap: wrap;
+    font-size: 12.5px;
+    gap: 8px;
+  }
+}

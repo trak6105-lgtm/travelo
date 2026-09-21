@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travelo Viet Nam - Private trips through Vietnam</title>
+  <meta name="description" content="Vietnam Private Travel Specialist - Go beyond the usual, with a journey shaped around how you want to experience Vietnam.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css?v=4.0.0">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="/" class="brand-logo" aria-label="Travelo Viet Nam">
+        <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="18.5" stroke="#FFFFFF" stroke-width="1.8"/>
+          <!-- Đường sóng biển và cánh chim cách điệu -->
+          <path d="M7 23C13 23 15 17 21 17C27 17 29 22 34 22" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M10 26C15 26 17 21 22 21C27 21 29 25 32 25" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M15 15C18 11 23 10 27 13" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-title">TRAVELO</span>
+          <span class="brand-sub">VIET NAM</span>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <button class="header-icon-btn" aria-label="Search" id="headerSearchBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <a href="tel:+84900000000" class="header-icon-btn" aria-label="Phone contact">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+        </a>
+
+        <a href="#account" class="header-icon-btn" aria-label="Account">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
+
+        <div class="dropdown-select-group">
+          <div class="select-item" id="langSelector">
+            <span>EN</span>
+            <svg class="chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <span class="header-separator">|</span>
+          <div class="select-item" id="currencySelector">
+            <span>USD</span>
+            <svg class="chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO BANNER (Luxury iVisa Design Standard with Overlap & Trust Pills) -->
+  <section class="hero-section">
+    <!-- Brand Swoop Ribbon behind hero -->
+    <img class="hero-swoosh" src="/images/ivisa_brand_swoop_ribbon.svg" alt="" aria-hidden="true">
+
+    <div class="container hero-container-flex">
+      <!-- Khối bên trái: Tiêu đề & Form nổi -->
+      <div class="hero-form-col">
+        <div class="hero-intro-text">
+          <h1 class="hero-big-title">
+            The easier way<br>
+            <span class="hero-title-highlight">to explore Vietnam</span>
+          </h1>
+          <p class="hero-big-subtext">
+            Private tours, tailor-made trips & unique experiences for <span class="hero-subtext-link">100+ destinations</span>. Tell us where you want to go. We'll handle everything else.
+          </p>
+        </div>
+
+        <div class="floating-search-card">
+          <!-- Floating pill gắn kết trên góc phải của form giống iVisa -->
+          <div class="floating-trust-pill pill-middle-left">
+            <svg class="pill-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span>24/7 Travel Specialist</span>
+          </div>
+
+          <p class="specialist-tag">Vietnam Private Travel Specialist</p>
+          <h2 class="hero-main-title">Private trips through Vietnam</h2>
+          <p class="hero-subtext">Go beyond the usual, with a journey shaped around how you want to experience Vietnam.</p>
+
+          <form class="travel-search-form" id="searchForm" onsubmit="return false;">
+            <div class="search-input-box">
+              <div class="search-field-wrapper">
+                <span class="search-field-label">DESTINATION & EXPERIENCES</span>
+                <div class="search-field-input-row">
+                  <svg class="search-pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search destination, experiences or tours" 
+                    autocomplete="off" 
+                    spellcheck="false"
+                    required
+                  >
+                </div>
+              </div>
+
+              <button type="submit" class="btn-search-tour" id="btnSearchTour">
+                <span>SEARCH TOUR</span>
+                <svg class="btn-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </button>
+            </div>
+          </form>
+
+          <div class="search-live-results" id="searchResults"></div>
+
+          <div class="trust-features-bar">
+            <span>No hidden fees</span>
+            <span class="dot">•</span>
+            <span>Flexible by design</span>
+            <span class="dot">•</span>
+            <span>50% deposit</span>
+          </div>
+        </div>
+
+        <!-- 3 Badges under the form -->
+        <div class="license-tags-container">
+          <span class="license-tag">input travel license</span>
+          <span class="license-tag">input travel license</span>
+          <span class="license-tag">input travel license</span>
+        </div>
+      </div>
+
+      <!-- Khối bên phải: Hình 2 người du khách & Floating Trust Pills -->
+      <div class="hero-couple-col">
+        <!-- Floating Pill Top Right (Đầu du khách) -->
+        <div class="floating-trust-pill pill-top-right">
+          <svg class="pill-svg-icon pill-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>99% 5-Star Experience</span>
+        </div>
+
+        <!-- Floating Pill Bottom Right (Cạnh vali vàng) -->
+        <div class="floating-trust-pill pill-bottom-right">
+          <span class="pill-star-icon">★</span>
+          <span>70,000+ happy travelers</span>
+        </div>
+
+        <div class="travelers-image-wrapper">
+          <img src="/images/ivisa_couple_travelers_banner.webp" alt="Couple travelers exploring Vietnam" class="couple-travelers-img" loading="eager" fetchpriority="high">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPLORE TRAVELO SECTION -->
+  <section class="explore-section">
+    <div class="container">
+      <h2 class="section-heading">Explore Travelo</h2>
+
+      <div class="explore-grid" id="exploreGrid">
+        <!-- Card 1 -->
+        <a href="#packages" class="explore-card">
+          <div class="card-info">
+            <h3 class="card-title">Vietnam Tour Packages</h3>
+            <p class="card-desc">Explore our curated tour packages</p>
+          </div>
+          <div class="card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="#tailor-made" class="explore-card">
+          <div class="card-info">
+            <h3 class="card-title">Tailor-Made Tours</h3>
+            <p class="card-desc">Tell us what you want</p>
+          </div>
+          <div class="card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Card 3 -->
+        <a href="#guide" class="explore-card">
+          <div class="card-info">
+            <h3 class="card-title">Travel Guide</h3>
+            <p class="card-desc">Useful information for your trip</p>
+          </div>
+          <div class="card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Card 4 -->
+        <a href="#about" class="explore-card">
+          <div class="card-info">
+            <h3 class="card-title">About Us</h3>
+            <p class="card-desc">Who we are, what we do</p>
+          </div>
+          <div class="card-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-main-container">
+      <!-- Cột 1: Brand & Slogan -->
+      <div class="footer-brand-col">
+        <div class="footer-logo-block">
+          <svg class="footer-logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="18.5" stroke="#050C42" stroke-width="2"/>
+            <path d="M7 23C13 23 15 17 21 17C27 17 29 22 34 22" stroke="#050C42" stroke-width="2" stroke-linecap="round"/>
+            <path d="M10 26C15 26 17 21 22 21C27 21 29 25 32 25" stroke="#050C42" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M15 15C18 11 23 10 27 13" stroke="#050C42" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <div class="footer-brand-text">
+            <span class="footer-title">TRAVELO</span>
+            <span class="footer-sub">VIET NAM</span>
+          </div>
+        </div>
+        <p class="footer-slogan">Good Trips. Great Stories.</p>
+      </div>
+
+      <!-- Cột 2: Điều hướng Navigation -->
+      <div class="footer-links-grid">
+        <div class="links-subcol">
+          <a href="#tours" class="footer-nav-link">Tours</a>
+          <a href="#about" class="footer-nav-link">About</a>
+        </div>
+        <div class="links-subcol">
+          <a href="#tailor-made" class="footer-nav-link">Tailor-made tours</a>
+          <a href="#guide" class="footer-nav-link">Travel guide</a>
+        </div>
+      </div>
+
+      <!-- Cột 3: Phương thức thanh toán (Payment Partners) -->
+      <div class="footer-payments-col">
+        <img src="/images/payment_partners_gateway_badges.png" alt="Payment methods: OnePay, PayPal, VISA, MasterCard, American Express, JCB" class="payment-badges-img">
+      </div>
+    </div>
+
+    <!-- Thanh bản quyền & Mạng xã hội -->
+    <div class="container footer-bottom-container">
+      <div class="footer-copyright">
+        <span>Copyright © 2026 | The One Digi Corp • Terms • Cookies</span>
+      </div>
+
+      <div class="footer-socials">
+        <!-- Facebook -->
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-box" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+          </svg>
+        </a>
+        <!-- Instagram -->
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-box" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-box" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/app.js?v=3.0.0"></script>
+</body>
+</html>
