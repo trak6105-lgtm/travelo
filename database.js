@@ -51,6 +51,33 @@ db.serialize(() => {
     }
   });
 
+  // Bảng tài khoản quản trị Admin
+  db.run(`CREATE TABLE IF NOT EXISTS admin_users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT UNIQUE NOT NULL,
+    password_hash TEXT NOT NULL,
+    salt TEXT NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+  )`);
+
+  // Hàm băm mật khẩu chuẩn mã hóa PBKDF2
+  const crypto = require('crypto');
+  function hashPassword(password, salt) {
+    return crypto.pbkdf2Sync(password, salt, 10000, 64, 'sha512').toString('hex');
+  }
+
+  // Khởi tạo tài khoản admin mặc định
+  db.get('SELECT COUNT(*) as count FROM admin_users', (err, row) => {
+    if (!err && row.count === 0) {
+      const salt = crypto.randomBytes(16).toString('hex');
+      const hash = hashPassword('Travelo@2026!', salt);
+      const stmt = db.prepare('INSERT INTO admin_users (username, password_hash, salt) VALUES (?, ?, ?)');
+      stmt.run('admin', hash, salt);
+      stmt.finalize();
+      console.log('Đã tạo tài khoản admin mặc định: admin');
+    }
+  });
+
   // Kiểm tra và seed dữ liệu mẫu cho tours_and_destinations
   db.get('SELECT COUNT(*) as count FROM tours_and_destinations', (err, row) => {
     if (!err && row.count === 0) {
@@ -65,4 +92,18 @@ db.serialize(() => {
   });
 });
 
-module.exports = db;
+const crypto = require('crypto');
+function hashPassword(password, salt) {
+  return crypto.pbkdf2Sync(password, salt, 10000, 64, 'sha512').toString('hex');
+}
+
+function verifyPassword(password, salt, storedHash) {
+  const hash = hashPassword(password, salt);
+  return crypto.timingSafeEqual(Buffer.from(hash, 'hex'), Buffer.from(storedHash, 'hex'));
+}
+
+module.exports = {
+  db,
+  hashPassword,
+  verifyPassword
+};

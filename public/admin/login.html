@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng Nhập Quản Trị - Travelo Việt Nam</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-navy: #030836;
+      --navy-light: #091353;
+      --teal-accent: #01A0AC;
+      --bg-slate: #0b122e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background: radial-gradient(circle at top right, #152259, var(--bg-slate));
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      color: #ffffff;
+    }
+    .login-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 40px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+    .brand-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .brand-logo-icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 12px;
+    }
+    .brand-title {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #ffffff;
+    }
+    .brand-sub {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      color: var(--teal-accent);
+      margin-top: 2px;
+    }
+    .card-title {
+      font-size: 16px;
+      color: #94a3b8;
+      margin-top: 14px;
+      font-weight: 500;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #cbd5e1;
+      margin-bottom: 8px;
+    }
+    input {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+      transition: all 0.2s;
+    }
+    input:focus {
+      border-color: var(--teal-accent);
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 0 0 3px rgba(1, 160, 172, 0.2);
+    }
+    .btn-submit {
+      width: 100%;
+      background: linear-gradient(135deg, var(--teal-accent) 0%, #0d9488 100%);
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(1, 160, 172, 0.3);
+      transition: all 0.2s;
+      margin-top: 10px;
+    }
+    .btn-submit:hover {
+      opacity: 0.95;
+      transform: translateY(-1px);
+    }
+    .btn-submit:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .error-msg {
+      background: rgba(239, 68, 68, 0.15);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #fca5a5;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      margin-bottom: 20px;
+      display: none;
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 24px;
+      font-size: 13px;
+      color: #94a3b8;
+      text-decoration: none;
+    }
+    .back-link:hover {
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-card">
+    <div class="brand-header">
+      <svg class="brand-logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="18.5" stroke="#FFFFFF" stroke-width="2"/>
+        <path d="M7 23C13 23 15 17 21 17C27 17 29 22 34 22" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+        <path d="M10 26C15 26 17 21 22 21C27 21 29 25 32 25" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M15 15C18 11 23 10 27 13" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div class="brand-title">TRAVELO</div>
+      <div class="brand-sub">ADMIN PORTAL</div>
+      <div class="card-title">Đăng nhập quyền quản trị hệ thống</div>
+    </div>
+
+    <div class="error-msg" id="errorMsg"></div>
+
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="username">TÊN ĐĂNG NHẬP</label>
+        <input type="text" id="username" placeholder="Nhập username" required autocomplete="username">
+      </div>
+
+      <div class="form-group">
+        <label for="password">MẬT KHẨU</label>
+        <input type="password" id="password" placeholder="Nhập mật khẩu" required autocomplete="current-password">
+      </div>
+
+      <button type="submit" class="btn-submit" id="btnSubmit">ĐĂNG NHẬP</button>
+    </form>
+
+    <a href="/" class="back-link">← Quay về trang chủ Travelo</a>
+  </div>
+
+  <script>
+    // Kiểm tra nếu đã có token thì chuyển hướng luôn
+    const existingToken = localStorage.getItem('travelo_admin_token');
+    if (existingToken) {
+      fetch('/api/admin/me', {
+        headers: { 'Authorization': 'Bearer ' + existingToken }
+      }).then(res => {
+        if (res.ok) window.location.href = '/admin';
+        else localStorage.removeItem('travelo_admin_token');
+      });
+    }
+
+    const loginForm = document.getElementById('loginForm');
+    const errorMsg = document.getElementById('errorMsg');
+    const btnSubmit = document.getElementById('btnSubmit');
+
+    loginForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorMsg.style.display = 'none';
+      btnSubmit.disabled = true;
+      btnSubmit.textContent = 'Đang xác thực...';
+
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value;
+
+      try {
+        const response = await fetch('/api/admin/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+
+        const data = await response.json();
+        if (response.ok && data.success) {
+          localStorage.setItem('travelo_admin_token', data.token);
+          localStorage.setItem('travelo_admin_user', JSON.stringify(data.user));
+          window.location.href = '/admin';
+        } else {
+          errorMsg.textContent = data.error || 'Đăng nhập không thành công.';
+          errorMsg.style.display = 'block';
+          btnSubmit.disabled = false;
+          btnSubmit.textContent = 'ĐĂNG NHẬP';
+        }
+      } catch (err) {
+        errorMsg.textContent = 'Lỗi kết nối máy chủ. Vui lòng thử lại.';
+        errorMsg.style.display = 'block';
+        btnSubmit.disabled = false;
+        btnSubmit.textContent = 'ĐĂNG NHẬP';
+      }
+    });
+  </script>
+</body>
+</html>

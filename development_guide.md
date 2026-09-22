@@ -6,6 +6,12 @@ Dự án website du lịch **Travelo Việt Nam** xây dựng trên nền tảng
 
 ## 🕒 NHẬT KÝ LỊCH SỬ THAY ĐỔI (CHANGELOG & TIMELINE)
 
+### [2026-09-22 14:40] - Đẩy toàn bộ mã nguồn lên GitHub Repository thành công
+- **Thời gian**: 2026-09-22 14:40 (GMT+7)
+- **Tiến trình**:
+  - Đã đẩy toàn bộ mã nguồn website Travelo Việt Nam lên GitHub chính thức tại: [https://github.com/trak6105-lgtm/travelo](https://github.com/trak6105-lgtm/travelo) (nhánh `main`).
+  - Sẵn sàng liên kết 1-Click tự động triển khai lên nền tảng Render.com.
+
 ### [2026-09-21 23:16] - Chuẩn bị cấu hình Deploy 1-Click lên Render.com
 - **Thời gian**: 2026-09-21 23:16 (GMT+7)
 - **Tính năng mới**:
