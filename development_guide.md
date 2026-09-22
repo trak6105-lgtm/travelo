@@ -6,6 +6,13 @@ Dự án website du lịch **Travelo Việt Nam** xây dựng trên nền tảng
 
 ## 🕒 NHẬT KÝ LỊCH SỬ THAY ĐỔI (CHANGELOG & TIMELINE)
 
+### [2026-09-21 23:16] - Chuẩn bị cấu hình Deploy 1-Click lên Render.com
+- **Thời gian**: 2026-09-21 23:16 (GMT+7)
+- **Tính năng mới**:
+  - Tạo cấu hình Blueprint `render.yaml` tự động nhận diện môi trường Node.js, lệnh build `npm install`, lệnh start `node server.js` và chế độ tự động deploy.
+  - Tạo tệp `.gitignore` lọc sạch các thư mục tạm và khởi tạo Git repository sẵn sàng liên kết GitHub.
+  - Tích hợp tài liệu hướng dẫn từng bước triển khai lên Render.com.
+
 ### [2026-09-21 23:14] - Mở cổng Online Demo trực tiếp và tích hợp tài liệu Deploy Cloud
 - **Thời gian**: 2026-09-21 23:14 (GMT+7)
 - **Tính năng mới**:
